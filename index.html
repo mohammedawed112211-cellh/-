@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مبادرة mado وشباب لتوصيل التعليم للجميع - كتابك صدقة</title>
+    <title>مبادرة mado وشباب لتوصيل التعليم للجميع</title>
     <style>
         * {
             box-sizing: border-box;
         }
         body {
-            font-family: Arial, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
-            padding: 15px;
-            background-color: #f0f4f8;
+            padding: 10px;
             text-align: center;
             position: relative;
             min-height: 100vh;
+            background-color: #f0f4f8;
         }
-        /* خلفية شفافة تحتوي على كتب ومذكرات وأوراق عمل */
+        /* خلفية الكتب وأوراق العمل الشفافة والمموهة */
         body::before {
             content: "";
             position: fixed;
@@ -28,63 +28,64 @@
             background-image: url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
-            opacity: 0.12;
+            opacity: 0.25;
             z-index: -1;
-            filter: blur(2px);
+            filter: blur(1px);
         }
         header {
-            background-color: rgba(44, 122, 123, 0.95);
+            background-color: rgba(44, 122, 123, 0.9);
             color: white;
-            padding: 25px 15px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            padding: 12px 10px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
         }
         header .initiative-tag {
-            background-color: #e2e8f0;
+            background-color: #ffffff;
             color: #2c7a7b;
-            padding: 6px 14px;
-            border-radius: 20px;
+            padding: 3px 10px;
+            border-radius: 12px;
             font-weight: bold;
             display: inline-block;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
+            margin-bottom: 6px;
+            font-size: 0.75rem;
         }
         header h1 {
-            margin: 10px 0 5px 0;
-            font-size: 1.8rem;
+            margin: 2px 0;
+            font-size: 1.2rem;
         }
         header p {
-            margin: 0;
-            font-size: 1.1rem;
-            opacity: 0.9;
+            margin: 2px 0 0 0;
+            font-size: 0.85rem;
+            opacity: 0.95;
         }
         main {
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
         }
         section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(5px);
-            padding: 20px 15px;
-            margin-bottom: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(4px);
+            padding: 12px 10px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
         }
         section h2 {
-            font-size: 1.4rem;
+            font-size: 0.95rem;
             color: #2c7a7b;
             margin-top: 0;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
         }
-        form input, form select, form button {
-            padding: 12px;
-            margin: 6px 0;
+        form input, form button {
+            padding: 8px;
+            margin: 4px 0;
             width: 100%;
             box-sizing: border-box;
             border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1rem;
+            border-radius: 5px;
+            font-size: 0.85rem;
         }
         form button {
             background-color: #2c7a7b;
@@ -92,19 +93,17 @@
             border: none;
             cursor: pointer;
             font-weight: bold;
-            margin-top: 10px;
-            font-size: 1.1rem;
-        }
-        form button:hover {
-            background-color: #235c5d;
+            margin-top: 6px;
+            font-size: 0.9rem;
         }
         #search-input {
             width: 100%;
-            padding: 14px;
-            margin-bottom: 15px;
-            border: 2px solid #2c7a7b;
-            border-radius: 8px;
-            font-size: 1rem;
+            padding: 8px;
+            margin-bottom: 8px;
+            border: 1.5px solid #2c7a7b;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.9);
         }
         .table-responsive {
             overflow-x: auto;
@@ -112,26 +111,25 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 10px;
-            background: white;
+            background: rgba(255, 255, 255, 0.7);
         }
         th, td {
-            border: 1px solid #e2e8f0;
-            padding: 12px 8px;
+            border: 1px solid rgba(200, 200, 200, 0.5);
+            padding: 6px 4px;
             text-align: center;
-            font-size: 1rem;
+            font-size: 0.8rem;
         }
         th {
-            background-color: #e2e8f0;
-            color: #2d3748;
-            font-weight: bold;
+            background-color: rgba(44, 122, 123, 0.15);
+            color: #2c7a7b;
+            font-size: 0.8rem;
         }
         .book-img {
-            width: 60px;
-            height: 80px;
+            width: 42px;
+            height: 55px;
             object-fit: cover;
-            border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -140,41 +138,41 @@
     <header>
         <span class="initiative-tag">مبادرة mado وشباب لتوصيل التعليم للجميع</span>
         <h1>موقع "كتابك صدقة"</h1>
-        <p>دليل المقررات الدراسية والكتب والمذكرات المتاحة في السودان</p>
+        <p>دليل المقررات والكتب والمذكرات - السودان</p>
     </header>
 
     <main>
-        <!-- قسم إضافة كتاب / مقرر -->
+        <!-- قسم إضافة كتاب -->
         <section>
-            <h2>إضافة كتاب أو مقرر دراسي جديد</h2>
+            <h2>إضافة كتاب / مقرر جديد</h2>
             <form id="add-book-form">
-                <input type="text" id="book-title" placeholder="اسم المقرر / الكتاب / المذكرة" required>
-                <input type="text" id="subject" placeholder="المادة (مثلاً: كيمياء، أحياء، رياضيات)" required>
-                <input type="text" id="location" placeholder="المنطقة (مثلاً: أم درمان، الخرطوم، بحري)" required>
+                <input type="text" id="book-title" placeholder="اسم الكتاب / المذكرة" required>
+                <input type="text" id="subject" placeholder="المادة (مثلاً: كيمياء)" required>
+                <input type="text" id="location" placeholder="المنطقة (مثلاً: أم درمان)" required>
                 <input type="text" id="contact" placeholder="رقم التواصل / التليجرام" required>
-                <input type="url" id="image-url" placeholder="رابط صورة غلاف المقرر/الكتاب (اختياري)">
-                <button type="submit">إضافة إلى القائمة</button>
+                <input type="url" id="image-url" placeholder="رابط الصورة (اختياري)">
+                <button type="submit">إضافة الكتاب</button>
             </form>
         </section>
 
-        <!-- قسم البحث والتصفح -->
+        <!-- قسم البحث والعرض -->
         <section>
             <h2>البحث والتصفح</h2>
-            <input type="text" id="search-input" onkeyup="searchBooks()" placeholder="ابحث باسم الكتاب، المادة، أو المنطقة (مثل: أم درمان)...">
+            <input type="text" id="search-input" onkeyup="searchBooks()" placeholder="ابحث باسم الكتاب، المادة، أو المنطقة...">
             
             <div class="table-responsive">
                 <table id="books-table">
                     <thead>
                         <tr>
-                            <th>صورة المقرر</th>
-                            <th>اسم الكتاب / المذكرة</th>
+                            <th>الصورة</th>
+                            <th>الكتاب</th>
                             <th>المادة</th>
                             <th>المنطقة</th>
                             <th>التواصل</th>
                         </tr>
                     </thead>
                     <tbody id="books-list">
-                        <!-- عناصر المقررات الدراسية -->
+                        <!-- تظهر المذكرات والكتب هنا -->
                     </tbody>
                 </table>
             </div>
@@ -182,27 +180,28 @@
     </main>
 
     <script>
+        // صور مولدة أوتوماتيكياً تضمن ظهور الصورة بشكل جميل بدون مشاكل روابط
         const books = [
             { 
-                title: "الكيمياء - الشهادة السودانية", 
+                title: "كيمياء الشهادة السودانية", 
                 subject: "كيمياء", 
                 location: "أم درمان", 
                 contact: "0912345678",
-                image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=300&q=80"
+                image: "https://dummyimage.com/120x160/2c7a7b/ffffff.png&text=%D9%83%D9%8A%D9%85%D9%8A%D8%A7%D8%A1"
             },
             { 
-                title: "مذكرة الأحياء وأوراق عمل", 
+                title: "مذكرة أحياء وأوراق عمل", 
                 subject: "أحياء", 
                 location: "الخرطوم", 
                 contact: "0987654321",
-                image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=300&q=80"
+                image: "https://dummyimage.com/120x160/27ae60/ffffff.png&text=%D8%A3%D8%AD%D9%8A%D8%A7%D8%A1"
             },
             { 
                 title: "الرياضيات المتخصصة", 
                 subject: "رياضيات", 
                 location: "أم درمان", 
                 contact: "0911122334",
-                image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=300&q=80"
+                image: "https://dummyimage.com/120x160/e67e22/ffffff.png&text=%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA"
             }
         ];
 
@@ -210,11 +209,9 @@
             const list = document.getElementById("books-list");
             list.innerHTML = "";
             booksToDisplay.forEach(book => {
-                const imgTag = book.image 
-                    ? `<img src="${book.image}" class="book-img" alt="صورة المقرر">` 
-                    : `<span style="color:#aaa; font-size:0.85rem;">لا توجد صورة</span>`;
+                const imgSrc = book.image ? book.image : "https://dummyimage.com/120x160/718096/ffffff.png&text=%D9%83%D8%AA%D8%A7%D8%A0";
                 const row = `<tr>
-                    <td>${imgTag}</td>
+                    <td><img src="${imgSrc}" class="book-img" alt="صورة"></td>
                     <td><strong>${book.title}</strong></td>
                     <td>${book.subject}</td>
                     <td>${book.location}</td>
@@ -230,7 +227,11 @@
             const subject = document.getElementById("subject").value;
             const location = document.getElementById("location").value;
             const contact = document.getElementById("contact").value;
-            const image = document.getElementById("image-url").value;
+            let image = document.getElementById("image-url").value;
+
+            if(!image) {
+                image = `https://dummyimage.com/120x160/2c7a7b/ffffff.png&text=${encodeURIComponent(subject)}`;
+            }
 
             books.push({ title, subject, location, contact, image });
             displayBooks(books);
@@ -252,5 +253,5 @@
     </script>
 
 </body>
-</html>
-
+                </html>
+    
