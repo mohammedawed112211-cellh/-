@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مبادرة mado وشباب لتوصيل التعليم للجميع</title>
+    <title>كتابك صدقة</title>
     <style>
         * {
             box-sizing: border-box;
@@ -17,7 +17,7 @@
             min-height: 100vh;
             background-color: #f0f4f8;
         }
-        /* خلفية الكتب وأوراق العمل الشفافة والمموهة */
+        /* خلفية المقررات والمناهج العربية والشفافية 50% */
         body::before {
             content: "";
             position: fixed;
@@ -25,15 +25,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80');
+            background-image: url('watermarked_img_2674133474482762136.jpg');
             background-size: cover;
             background-position: center;
-            opacity: 0.25;
+            opacity: 0.5;
             z-index: -1;
             filter: blur(1px);
         }
         header {
-            background-color: rgba(44, 122, 123, 0.9);
+            background-color: rgba(44, 122, 123, 0.92);
             color: white;
             padding: 12px 10px;
             border-radius: 8px;
@@ -60,23 +60,27 @@
             opacity: 0.95;
         }
         main {
-            max-width: 600px;
+            max-width: 680px;
             margin: 0 auto;
         }
         section {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(4px);
             padding: 12px 10px;
             margin-bottom: 12px;
             border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.7);
             box-shadow: 0 2px 6px rgba(0,0,0,0.06);
         }
         section h2 {
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             color: #2c7a7b;
             margin-top: 0;
             margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
         }
         form input, form button {
             padding: 8px;
@@ -96,6 +100,9 @@
             margin-top: 6px;
             font-size: 0.9rem;
         }
+        form button:hover {
+            background-color: #235c5d;
+        }
         #search-input {
             width: 100%;
             padding: 8px;
@@ -111,7 +118,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.75);
         }
         th, td {
             border: 1px solid rgba(200, 200, 200, 0.5);
@@ -131,6 +138,28 @@
             border-radius: 4px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
+        .delete-btn {
+            background-color: #e53e3e;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            cursor: pointer;
+        }
+        .delete-btn:hover {
+            background-color: #c53030;
+        }
+        .whatsapp-link {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 3px 6px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -138,13 +167,50 @@
     <header>
         <span class="initiative-tag">مبادرة mado وشباب لتوصيل التعليم للجميع</span>
         <h1>موقع "كتابك صدقة"</h1>
-        <p>دليل المقررات والكتب والمذكرات - السودان</p>
+        <p>دليل المقررات والدعم التعليمي - السودان</p>
     </header>
 
     <main>
-        <!-- قسم إضافة كتاب -->
+        <!-- 1. قسم إضافة حصة مجانية -->
         <section>
-            <h2>إضافة كتاب / مقرر جديد</h2>
+            <h2>🎓 إضافة حصة / مراجعة مجانية (للأساتذة)</h2>
+            <form id="add-class-form">
+                <input type="text" id="teacher-name" placeholder="اسم الأستاذ / المبادرة" required>
+                <input type="text" id="class-subject" placeholder="المادة (مثلاً: كيمياء، رياضيات)" required>
+                <input type="text" id="class-time" placeholder="التاريخ والزمن (مثلاً: الجمعة الساعة 4 عصراً)" required>
+                <input type="text" id="class-location" placeholder="مكان الحصة (أو رابط أونلاين/زوم)" required>
+                <input type="text" id="teacher-contact" placeholder="رقم التواصل" required>
+                <input type="url" id="whatsapp-group" placeholder="رابط جروب الواتساب للحصة (اختياري)">
+                <button type="submit">إعلان الحصة المجانية</button>
+            </form>
+        </section>
+
+        <!-- قسم عرض الحصص المجانية -->
+        <section>
+            <h2>📢 جدول الحصص المجانية المتاحة</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الأستاذ</th>
+                            <th>المادة</th>
+                            <th>الموعد</th>
+                            <th>المكان</th>
+                            <th>التواصل</th>
+                            <th>الجروب</th>
+                            <th>الإجراء</th>
+                        </tr>
+                    </thead>
+                    <tbody id="classes-list">
+                        <!-- تظهر الحصص المجانية هنا -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 2. قسم إضافة كتاب -->
+        <section>
+            <h2>📚 إضافة كتاب / مقرر جديد</h2>
             <form id="add-book-form">
                 <input type="text" id="book-title" placeholder="اسم الكتاب / المذكرة" required>
                 <input type="text" id="subject" placeholder="المادة (مثلاً: كيمياء)" required>
@@ -155,9 +221,9 @@
             </form>
         </section>
 
-        <!-- قسم البحث والعرض -->
+        <!-- قسم البحث والتصفح للكتب -->
         <section>
-            <h2>البحث والتصفح</h2>
+            <h2>🔍 البحث عن الكتب والمذكرات</h2>
             <input type="text" id="search-input" onkeyup="searchBooks()" placeholder="ابحث باسم الكتاب، المادة، أو المنطقة...">
             
             <div class="table-responsive">
@@ -169,6 +235,7 @@
                             <th>المادة</th>
                             <th>المنطقة</th>
                             <th>التواصل</th>
+                            <th>الإجراء</th>
                         </tr>
                     </thead>
                     <tbody id="books-list">
@@ -180,9 +247,23 @@
     </main>
 
     <script>
-        // صور مولدة أوتوماتيكياً تضمن ظهور الصورة بشكل جميل بدون مشاكل روابط
-        const books = [
+        // بيانات الحصص المجانية
+        let freeClasses = [
+            {
+                id: 1,
+                teacher: "أ. محمد أحمد",
+                subject: "كيمياء",
+                time: "السبت - 4:00 عصراً",
+                location: "أم درمان - مركز الشباب",
+                contact: "0912345678",
+                whatsapp: "https://chat.whatsapp.com/"
+            }
+        ];
+
+        // بيانات الكتب
+        let books = [
             { 
+                id: 1,
                 title: "كيمياء الشهادة السودانية", 
                 subject: "كيمياء", 
                 location: "أم درمان", 
@@ -190,21 +271,59 @@
                 image: "https://dummyimage.com/120x160/2c7a7b/ffffff.png&text=%D9%83%D9%8A%D9%85%D9%8A%D8%A7%D8%A1"
             },
             { 
+                id: 2,
                 title: "مذكرة أحياء وأوراق عمل", 
                 subject: "أحياء", 
                 location: "الخرطوم", 
                 contact: "0987654321",
                 image: "https://dummyimage.com/120x160/27ae60/ffffff.png&text=%D8%A3%D8%AD%D9%8A%D8%A7%D8%A1"
-            },
-            { 
-                title: "الرياضيات المتخصصة", 
-                subject: "رياضيات", 
-                location: "أم درمان", 
-                contact: "0911122334",
-                image: "https://dummyimage.com/120x160/e67e22/ffffff.png&text=%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A7%D8%AA"
             }
         ];
 
+        // عرض الحصص المجانية
+        function displayClasses() {
+            const list = document.getElementById("classes-list");
+            list.innerHTML = "";
+            freeClasses.forEach(cls => {
+                const waTag = cls.whatsapp 
+                    ? `<a href="${cls.whatsapp}" target="_blank" class="whatsapp-link">انضمام</a>` 
+                    : `<span style="color:#aaa;">-</span>`;
+                const row = `<tr>
+                    <td><strong>${cls.teacher}</strong></td>
+                    <td>${cls.subject}</td>
+                    <td>${cls.time}</td>
+                    <td>${cls.location}</td>
+                    <td>${cls.contact}</td>
+                    <td>${waTag}</td>
+                    <td><button class="delete-btn" onclick="deleteClass(${cls.id})">إزالة</button></td>
+                </tr>`;
+                list.innerHTML += row;
+            });
+        }
+
+        // إضافة حصة مجانية جديدة
+        document.getElementById("add-class-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const teacher = document.getElementById("teacher-name").value;
+            const subject = document.getElementById("class-subject").value;
+            const time = document.getElementById("class-time").value;
+            const location = document.getElementById("class-location").value;
+            const contact = document.getElementById("teacher-contact").value;
+            const whatsapp = document.getElementById("whatsapp-group").value;
+
+            freeClasses.push({ id: Date.now(), teacher, subject, time, location, contact, whatsapp });
+            displayClasses();
+            this.reset();
+        });
+
+        function deleteClass(id) {
+            if (confirm("هل تريد إزالة هذا الإعلان عن الحصة؟")) {
+                freeClasses = freeClasses.filter(c => c.id !== id);
+                displayClasses();
+            }
+        }
+
+        // عرض الكتب
         function displayBooks(booksToDisplay) {
             const list = document.getElementById("books-list");
             list.innerHTML = "";
@@ -216,6 +335,7 @@
                     <td>${book.subject}</td>
                     <td>${book.location}</td>
                     <td>${book.contact}</td>
+                    <td><button class="delete-btn" onclick="deleteBook(${book.id})">تم التسليم</button></td>
                 </tr>`;
                 list.innerHTML += row;
             });
@@ -233,11 +353,17 @@
                 image = `https://dummyimage.com/120x160/2c7a7b/ffffff.png&text=${encodeURIComponent(subject)}`;
             }
 
-            books.push({ title, subject, location, contact, image });
+            books.push({ id: Date.now(), title, subject, location, contact, image });
             displayBooks(books);
-
             this.reset();
         });
+
+        function deleteBook(id) {
+            if (confirm("هل تم تسليم هذا الكتاب وتريد إزالته من القائمة؟")) {
+                books = books.filter(book => book.id !== id);
+                searchBooks();
+            }
+        }
 
         function searchBooks() {
             const query = document.getElementById("search-input").value.toLowerCase();
@@ -249,9 +375,10 @@
             displayBooks(filtered);
         }
 
+        displayClasses();
         displayBooks(books);
     </script>
 
 </body>
-                </html>
+    </html>
     
