@@ -17,7 +17,7 @@
             min-height: 100vh;
             background-color: #f0f4f8;
         }
-        /* خلفية المقررات والمناهج العربية والشفافية 50% */
+        /* خلفية الكتب والكتب الدراسية بشفافية 50% */
         body::before {
             content: "";
             position: fixed;
@@ -25,7 +25,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('watermarked_img_2674133474482762136.jpg');
+            background-image: url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             opacity: 0.5;
@@ -77,10 +77,6 @@
             color: #2c7a7b;
             margin-top: 0;
             margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
         }
         form input, form button {
             padding: 8px;
@@ -171,7 +167,7 @@
     </header>
 
     <main>
-        <!-- 1. قسم إضافة حصة مجانية -->
+        <!-- قسم إضافة حصة مجانية -->
         <section>
             <h2>🎓 إضافة حصة / مراجعة مجانية (للأساتذة)</h2>
             <form id="add-class-form">
@@ -208,7 +204,7 @@
             </div>
         </section>
 
-        <!-- 2. قسم إضافة كتاب -->
+        <!-- قسم إضافة كتاب -->
         <section>
             <h2>📚 إضافة كتاب / مقرر جديد</h2>
             <form id="add-book-form">
@@ -247,7 +243,6 @@
     </main>
 
     <script>
-        // بيانات الحصص المجانية
         let freeClasses = [
             {
                 id: 1,
@@ -260,7 +255,6 @@
             }
         ];
 
-        // بيانات الكتب
         let books = [
             { 
                 id: 1,
@@ -268,7 +262,7 @@
                 subject: "كيمياء", 
                 location: "أم درمان", 
                 contact: "0912345678",
-                image: "https://dummyimage.com/120x160/2c7a7b/ffffff.png&text=%D9%83%D9%8A%D9%85%D9%8A%D8%A7%D8%A1"
+                image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=200&q=80"
             },
             { 
                 id: 2,
@@ -276,11 +270,10 @@
                 subject: "أحياء", 
                 location: "الخرطوم", 
                 contact: "0987654321",
-                image: "https://dummyimage.com/120x160/27ae60/ffffff.png&text=%D8%A3%D8%AD%D9%8A%D8%A7%D8%A1"
+                image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=200&q=80"
             }
         ];
 
-        // عرض الحصص المجانية
         function displayClasses() {
             const list = document.getElementById("classes-list");
             list.innerHTML = "";
@@ -301,7 +294,6 @@
             });
         }
 
-        // إضافة حصة مجانية جديدة
         document.getElementById("add-class-form").addEventListener("submit", function(e) {
             e.preventDefault();
             const teacher = document.getElementById("teacher-name").value;
@@ -323,12 +315,11 @@
             }
         }
 
-        // عرض الكتب
         function displayBooks(booksToDisplay) {
             const list = document.getElementById("books-list");
             list.innerHTML = "";
             booksToDisplay.forEach(book => {
-                const imgSrc = book.image ? book.image : "https://dummyimage.com/120x160/718096/ffffff.png&text=%D9%83%D8%AA%D8%A7%D8%A0";
+                const imgSrc = book.image ? book.image : "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=200&q=80";
                 const row = `<tr>
                     <td><img src="${imgSrc}" class="book-img" alt="صورة"></td>
                     <td><strong>${book.title}</strong></td>
@@ -350,7 +341,7 @@
             let image = document.getElementById("image-url").value;
 
             if(!image) {
-                image = `https://dummyimage.com/120x160/2c7a7b/ffffff.png&text=${encodeURIComponent(subject)}`;
+                image = "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=200&q=80";
             }
 
             books.push({ id: Date.now(), title, subject, location, contact, image });
