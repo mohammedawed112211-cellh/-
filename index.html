@@ -17,7 +17,7 @@
             min-height: 100vh;
             background-color: #f0f4f8;
         }
-        /* خلفية الكتب والكتب الدراسية بشفافية 50% */
+        /* خلفية شفافة للموقع */
         body::before {
             content: "";
             position: fixed;
@@ -167,21 +167,21 @@
     </header>
 
     <main>
-        <!-- قسم إضافة حصة مجانية -->
+        <!-- 1. قسم إضافة حصة مجانية (للأساتذة) -->
         <section>
             <h2>🎓 إضافة حصة / مراجعة مجانية (للأساتذة)</h2>
             <form id="add-class-form">
                 <input type="text" id="teacher-name" placeholder="اسم الأستاذ / المبادرة" required>
                 <input type="text" id="class-subject" placeholder="المادة (مثلاً: كيمياء، رياضيات)" required>
                 <input type="text" id="class-time" placeholder="التاريخ والزمن (مثلاً: الجمعة الساعة 4 عصراً)" required>
-                <input type="text" id="class-location" placeholder="مكان الحصة (أو رابط أونلاين/زوم)" required>
+                <input type="text" id="class-location" placeholder="مكان الحصة أو رابطها" required>
                 <input type="text" id="teacher-contact" placeholder="رقم التواصل" required>
-                <input type="url" id="whatsapp-group" placeholder="رابط جروب الواتساب للحصة (اختياري)">
+                <input type="url" id="whatsapp-group" placeholder="رابط جروب الواتساب (اختياري)">
                 <button type="submit">إعلان الحصة المجانية</button>
             </form>
         </section>
 
-        <!-- قسم عرض الحصص المجانية -->
+        <!-- 2. قسم جدول الحصص المجانية المتاحة -->
         <section>
             <h2>📢 جدول الحصص المجانية المتاحة</h2>
             <div class="table-responsive">
@@ -198,13 +198,13 @@
                         </tr>
                     </thead>
                     <tbody id="classes-list">
-                        <!-- تظهر الحصص المجانية هنا -->
+                        <!-- تظهر الحصص هنا -->
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- قسم إضافة كتاب -->
+        <!-- 3. قسم إضافة كتاب -->
         <section>
             <h2>📚 إضافة كتاب / مقرر جديد</h2>
             <form id="add-book-form">
@@ -217,7 +217,7 @@
             </form>
         </section>
 
-        <!-- قسم البحث والتصفح للكتب -->
+        <!-- 4. قسم البحث والتصفح للكتب -->
         <section>
             <h2>🔍 البحث عن الكتب والمذكرات</h2>
             <input type="text" id="search-input" onkeyup="searchBooks()" placeholder="ابحث باسم الكتاب، المادة، أو المنطقة...">
@@ -243,18 +243,20 @@
     </main>
 
     <script>
+        // بيانات أولية للحصص المجانية
         let freeClasses = [
             {
                 id: 1,
                 teacher: "أ. محمد أحمد",
                 subject: "كيمياء",
                 time: "السبت - 4:00 عصراً",
-                location: "أم درمان - مركز الشباب",
+                location: "أم درمان",
                 contact: "0912345678",
                 whatsapp: "https://chat.whatsapp.com/"
             }
         ];
 
+        // بيانات أولية للكتب
         let books = [
             { 
                 id: 1,
@@ -372,4 +374,4 @@
 
 </body>
     </html>
-    
+                    
